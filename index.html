@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kahraman Su Yalıtımı - Kayseri'nin Güvenilir Su Yalıtım Çözümleri</title>
+    <meta name="description" content="Kayseri su yalıtımı hizmetleri. Çatı, teras, temel ve havuz yalıtımında 20 yıllık tecrübe. 10 yıl garanti, ücretsiz keşif.">
+    <meta name="keywords" content="kayseri su yalıtımı, çatı yalıtımı, teras yalıtımı, su izolasyonu, kahraman su yalıtımı">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,102,204,0.9), rgba(0,102,204,0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,165.3C384,171,480,149,576,154.7C672,160,768,192,864,197.3C960,203,1056,181,1152,165.3C1248,149,1344,139,1392,133.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #ff6b00;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+        }
+        .cta-button:hover {
+            background: #e55a00;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Services Grid */
+        .services {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #0066cc;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .service-card h3 {
+            color: #0066cc;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        .service-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .service-card li {
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        .service-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00cc66;
+            font-weight: bold;
+        }
+        
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #0066cc;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        .feature {
+            padding: 20px;
+        }
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .feature h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        /* Contact */
+        .contact {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .contact-item {
+            text-align: center;
+        }
+        .contact-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        footer p {
+            opacity: 0.8;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">KAHRAMAN SU YALITIMI</a>
+            <ul class="nav-links">
+                <li><a href="#home">Ana Sayfa</a></li>
+                <li><a href="#services">Hizmetler</a></li>
+                <li><a href="#features">Özellikler</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>KAYSERİ'DE PROFESYONEL SU YALITIMI</h1>
+            <p>20 Yıllık Tecrübemizle Yapınızı Suya Karşı Koruyoruz</p>
+            <a href="tel:03522223344" class="cta-button">📞 Hemen Ara: 0352 222 33 44</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2>HİZMETLERİMİZ</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🏠 Çatı Su Yalıtımı</h3>
+                    <ul>
+                        <li>Shingle uygulamaları</li>
+                        <li>Membran kaplama sistemleri</li>
+                        <li>Bitümlü örtü sistemleri</li>
+                        <li>Poliüretan sprey yalıtım</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>🏢 Teras ve Balkon Yalıtımı</h3>
+                    <ul>
+                        <li>Poliüretan esaslı yalıtım</li>
+                        <li>Seramik altı su yalıtımı</li>
+                        <li>Akrilik esaslı sistemler</li>
+                        <li>Elastomerik kaplama</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>🏊 Havuz ve Su Deposu</h3>
+                    <ul>
+                        <li>Epoksi kaplama sistemleri</li>
+                        <li>Sıvı membran uygulaması</li>
+                        <li>Kristalize su yalıtımı</li>
+                        <li>PVC membran döşeme</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>🏗️ Temel ve Bodrum Yalıtımı</h3>
+                    <ul>
+                        <li>Perde beton yalıtımı</li>
+                        <li>Temel drenaj sistemleri</li>
+                        <li>Bitümlü membran uygulama</li>
+                        <li>Enjeksiyon yalıtımı</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>🚿 Banyo ve Islak Alan</h3>
+                    <ul>
+                        <li>Çift komponentli yalıtım</li>
+                        <li>Elastik sıvı membran</li>
+                        <li>Seramik altı izolasyon</li>
+                        <li>Su kaçağı tamiri</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>🏭 Endüstriyel Yalıtım</h3>
+                    <ul>
+                        <li>Fabrika çatı yalıtımları</li>
+                        <li>Depo zemin kaplamaları</li>
+                        <li>Soğuk hava depoları</li>
+                        <li>Kimyasal tank yalıtımı</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2>NEDEN BİZİ TERCİH ETMELİSİNİZ?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">⏰</div>
+                    <h3>20 Yıllık Tecrübe</h3>
+                    <p>Sektörde 2004'ten beri faaliyet gösteriyoruz</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✅</div>
+                    <h3>TSE Belgeli Ürünler</h3>
+                    <p>Sadece kaliteli ve sertifikalı malzemeler kullanıyoruz</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>10 Yıl Garanti</h3>
+                    <p>Tüm işlerimizde 10 yıl garanti veriyoruz</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👷</div>
+                    <h3>Uzman Kadro</h3>
+                    <p>Alanında uzman teknik ekibimizle hizmetinizdeyiz</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🚨</div>
+                    <h3>7/24 Acil Servis</h3>
+                    <p>Acil durumlarınızda 7/24 ulaşabilirsiniz</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏠</div>
+                    <h3>Ücretsiz Keşif</h3>
+                    <p>Kayseri içi ücretsiz keşif hizmeti</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>BİZE ULAŞIN</h2>
+            <p>Su yalıtımı ihtiyaçlarınız için hemen arayın, ücretsiz keşif yapalım!</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📍 Adres</h3>
+                    <p>Kocasinan Mah. Erkilet Bulvarı No:45/A<br>Kocasinan / KAYSERİ</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📞 Telefon</h3>
+                    <p><a href="tel:03522223344">0352 222 33 44</a><br>
+                    <a href="tel:05325556677">0532 555 66 77</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>✉️ E-posta</h3>
+                    <p><a href="mailto:info@kayserisuyalitimi.com">info@kayserisuyalitimi.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Kahraman Su Yalıtımı - Tüm Hakları Saklıdır</p>
+            <p>Kayseri Su Yalıtımı | Çatı Yalıtımı | Teras İzolasyonu | Temel Yalıtımı</p>
+        </div>
+    </footer>
+</body>
+</html>

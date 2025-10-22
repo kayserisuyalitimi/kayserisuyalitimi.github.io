@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kahraman Su Yalıtımı - Mobil</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  font-family: Arial, sans-serif; 
+  line-height: 1.6; 
+  color: #333; 
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #1e40af, #0d9488);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.phone {
+  background: #f59e0b;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+/* Navigation */
+.nav {
+  background: #f8f9fa;
+  padding: 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+.nav-btn {
+  background: #1e40af;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.nav-btn.active {
+  background: #0d9488;
+}
+
+/* Sections */
+.section {
+  display: none;
+  padding: 1rem;
+}
+.section.active {
+  display: block;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #1e40af, #0d9488);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.hero h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  margin-bottom: 1.5rem;
+}
+.cta {
+  background: #f59e0b;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 25px;
+  display: inline-block;
+  font-weight: bold;
+  margin: 0.5rem;
+}
+
+/* Cards */
+.card {
+  background: white;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.card h3 {
+  color: #1e40af;
+  margin-bottom: 0.5rem;
+}
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+.features span {
+  background: #e5e7eb;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+}
+.stat {
+  text-align: center;
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1e40af;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+.gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.btn {
+  background: linear-gradient(135deg, #1e40af, #0d9488);
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Contact */
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+.contact-icon {
+  background: #1e40af;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+/* Footer */
+.footer {
+  background: #1f2937;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+  .stats { grid-template-columns: repeat(4, 1fr); }
+  .gallery { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</head>
+<body><div class="loading-screen">
+<div class="loading-content">
+<div class="logo-animation">
+<i class="fas fa-tint"></i>
+<span>KAHRAMAN</span>
+</div>
+<div class="loading-bar">
+<div class="loading-progress"></div>
+</div>
+</div>
+</div>
+<!-- Header -->
+<header class="header">
+<div class="logo">🏠 KAHRAMAN SU YALITIMI</div>
+<a class="phone" href="tel:+905051429289">+90 505 142 92 89</a>
+</header>
+<!-- Navigation -->
+<nav class="nav">
+<button class="nav-btn active" onclick="showSection('home')">Ana Sayfa</button>
+<button class="nav-btn" onclick="showSection('services')">Hizmetler</button>
+<button class="nav-btn" onclick="showSection('about')">Hakkımızda</button>
+<button class="nav-btn" onclick="showSection('gallery')">Galeri</button>
+<button class="nav-btn" onclick="showSection('contact')">İletişim</button>
+</nav>
+<!-- Home Section -->
+<section class="section active" id="home">
+<div class="hero">
+<h1>Su Yalıtımında Profesyonel Çözüm</h1>
+<p>Çatı, teras, bodrum, temel ve havuzlarda uzun ömürlü, sertifikalı sistemler. Su sızıntılarına karşı <strong>%100 garanti</strong> ile hizmet veriyoruz.</p>
+<a class="cta" href="tel:+905051429289">+90 505 142 92 89</a>
+<a class="cta" href="#" onclick="showSection('services')">🔧 Hizmetler</a>
+</div>
+<div class="stats">
+<div class="stat">
+<div class="stat-number">500+</div>
+<div>Proje</div>
+</div>
+<div class="stat">
+<div class="stat-number">300+</div>
+<div>Müşteri</div>
+</div>
+<div class="stat">
+<div class="stat-number">10</div>
+<div>Yıl Tecrübe</div>
+</div>
+<div class="stat">
+<div class="stat-number">%100</div>
+<div>Garanti</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="section" id="services">
+<h2 style="text-align: center; color: #1e40af; margin-bottom: 1rem;">HİZMETLERİMİZ</h2>
+<div class="card">
+<h3>🏠 Çatı &amp; Teras Yalıtımı</h3>
+<p>Bitüm membran UV dayanıklı kaplama, detay çözümleri ve su testleri ile profesyonel hizmet</p>
+<div class="features">
+<span>UV Dayanıklı</span>
+<span>Su Testi</span>
+<span>15 Yıl Garanti</span>
+</div>
+</div>
+<div class="card">
+<h3>🏢 Temel &amp; Bohçalama</h3>
+<p>Kristalize ve membran sistemleri ile güçlü temel koruması. Pozitif/negatif basınca dayanıklı çözümler.</p>
+<div class="features">
+<span>Kristalize Sistem</span>
+<span>Membran</span>
+<span>Basınç Dayanımı</span>
+</div>
+</div>
+<div class="card">
+<h3>🏠 Bodrum &amp; Perde</h3>
+<p>XPS, EPS drenaj levhası ile nem kontrolü. Su yalıtımı ile birlikte ısı yalıtımı avantajı.</p>
+<div class="features">
+<span>XPS Levha</span>
+<span>Drenaj Sistemi</span>
+<span>Isı Yalıtımı</span>
+</div>
+</div>
+<div class="card">
+<h3>🏊 Havuz &amp; Depo</h3>
+<p>TSE içme suyu onaylı kimyasal dayanımlı sistemler. Sağlık ve güvenlik standartlarında hizmet.</p>
+<div class="features">
+<span>TSE Onaylı</span>
+<span>İçme Suyu Uygun</span>
+<span>Kimyasal Dayanım</span>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="section" id="about">
+<h2 style="text-align: center; color: #1e40af; margin-bottom: 1rem;">HAKKIMIZDA</h2>
+<div class="card">
+<h3>Kahraman Su Yalıtımı Hikayesi</h3>
+<p>Selçuklu, Alagöz Sk. No:10, 38050 Melikgazi/Kayseri</p>
+</div>
+<div class="card">
+<h3>✅ Kalite</h3>
+<p>Sadece TSE onaylı, sertifikalı malzemeler kullanıyoruz. Her projemizde en yüksek kalite standartlarını uyguluyoruz.</p>
+</div>
+<div class="card">
+<h3>🤝 Güvenilirlik</h3>
+<p>Verdiğimiz sözlerin arkasında dururuz. Müşteri memnuniyeti bizim için en önemli değerdir.</p>
+</div>
+<div class="card">
+<h3>🎓 Uzmanlık</h3>
+<p>Sertifikalı ve deneyimli ekibimiz ile en karmaşık su yalıtım problemlerine çözüm buluyoruz.</p>
+</div>
+<div class="card">
+<h3>⏰ Zamanında Teslim</h3>
+<p>Proje planlamasını titizlikle yapıyoruz ve belirlenen sürede işlerimizi tamamlıyoruz.</p>
+</div>
+<div class="card">
+<h3>🛡️ Garanti</h3>
+<p>İşlerimizin arkasında duruyoruz. Raporlu garanti belgesi ile müşterilerimize güvence veriyoruz.</p>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="section" id="gallery">
+<h2 style="text-align: center; color: #1e40af; margin-bottom: 1rem;">PROJELERİMİZ</h2>
+<div class="gallery">
+<img alt="Villa Çatı Yalıtımı" src="images/image1.jpeg"/>
+<img alt="Apartman Çatısı" src="images/image2.jpeg"/>
+<img alt="Teras Bahçe" src="images/image3.jpeg"/>
+<img alt="Ofis Binası" src="images/image4.jpeg"/>
+<img alt="Bodrum Yalıtımı" src="images/image5.jpeg"/>
+<img alt="Havuz Yalıtımı" src="images/image1.jpeg"/>
+</div>
+<div style="text-align: center; margin-top: 1rem;">
+<a class="cta" href="tel:+905051429289">+90 505 142 92 89</a>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="section" id="contact">
+<h2 style="text-align: center; color: #1e40af; margin-bottom: 1rem;">İLETİŞİM</h2>
+<div class="contact-item">
+<div class="contact-icon">📞</div>
+<div>
+<strong>Telefon</strong><br/>
+      +90 505 142 92 89<br/>
+      7/24 Acil Servis
+    </div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">💬</div>
+<div>
+<strong>WhatsApp</strong><br/>
+      +90 505 142 92 89<br/>
+      Hızlı iletişim
+    </div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">✉️</div>
+<div>
+<strong>E-posta</strong><br/>
+      info@kahramansuyalitimi.com<br/>
+      24 saat içinde yanıt
+    </div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">📍</div>
+<div>Selçuklu, Alagöz Sk. No:10, 38050 Melikgazi/Kayseri</div>
+</div>
+<div class="card">
+<h3>📝 Ücretsiz Teklif Formu</h3>
+<form onsubmit="submitForm(event)">
+<div class="form-group">
+<label>Ad Soyad *</label>
+<input required="" type="text"/>
+</div>
+<div class="form-group">
+<label>Telefon *</label>
+<input required="" type="tel"/>
+</div>
+<div class="form-group">
+<label>Hizmet Türü *</label>
+<select required="">
+<option value="">Seçiniz</option>
+<option>Çatı Yalıtımı</option>
+<option>Teras Yalıtımı</option>
+<option>Bodrum Yalıtımı</option>
+<option>Temel Yalıtımı</option>
+<option>Havuz Yalıtımı</option>
+</select>
+</div>
+<div class="form-group">
+<label>Proje Detayları</label>
+<textarea placeholder="Projeniz hakkında bilgi verin..." rows="4"></textarea>
+</div>
+<button class="btn" type="submit">📧 Teklif Talep Et</button>
+</form>
+</div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+<div>Selçuklu, Alagöz Sk. No:10, 38050 Melikgazi/Kayseri</div>
+<p style="margin-top: 1rem; opacity: 0.7;">
+    © 2024 Kahraman Su Yalıtımı. Tüm hakları saklıdır.
+  </p>
+</footer>
+<script>
+function showSection(sectionId) {
+  // Hide all sections
+  var sections = document.querySelectorAll('.section');
+  for (var i = 0; i < sections.length; i++) {
+    sections[i].classList.remove('active');
+  }
+  
+  // Remove active from all buttons
+  var buttons = document.querySelectorAll('.nav-btn');
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove('active');
+  }
+  
+  // Show target section
+  document.getElementById(sectionId).classList.add('active');
+  
+  // Add active to clicked button
+  event.target.classList.add('active');
+  
+  // Scroll to top
+  window.scrollTo(0, 0);
+}
+
+function submitForm(event) {
+  event.preventDefault();
+  alert('Mesajınız alındı! En kısa sürede size dönüş yapacağız.\n\nHızlı iletişim için:\n📞 +90 505 142 92 89\n💬 WhatsApp');
+}
+
+// Simple page load optimization
+window.addEventListener('load', function() {
+  document.body.style.visibility = 'visible';
+});
+</script>
+<script defer="True" src="assets/js/main.js"></script></body>
+</html>

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hakkımızda | Kahraman Su Yalıtımı</title>
+<meta content="Kahraman Su Yalıtımı olarak su yalıtımında 10 yıllık deneyimimiz. Sertifikalı ekip, kaliteli malzemeler ve %100 müşteri memnuniyeti." name="description"/>
+<link href="assets/css/styles.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        .about-hero {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: var(--space-24) 0 var(--space-16);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/image5.jpeg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 1;
+        }
+        .about-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        .about-hero h1 {
+            font-size: var(--font-size-5xl);
+            font-weight: 800;
+            margin-bottom: var(--space-6);
+        }
+        .about-hero p {
+            font-size: var(--font-size-xl);
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .about-main {
+            padding: var(--space-24) 0;
+        }
+        .about-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-16);
+            align-items: center;
+            margin-bottom: var(--space-24);
+        }
+        .about-intro-text h2 {
+            font-size: var(--font-size-4xl);
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: var(--space-6);
+        }
+        .about-intro-text p {
+            font-size: var(--font-size-lg);
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: var(--space-6);
+        }
+        .about-intro-image {
+            position: relative;
+        }
+        .about-intro-image img {
+            width: 100%;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-2xl);
+        }
+        .about-intro-badge {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: var(--gradient-accent);
+            color: var(--white);
+            padding: var(--space-4) var(--space-6);
+            border-radius: var(--radius-xl);
+            font-weight: 700;
+            font-size: var(--font-size-lg);
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+        .values-section {
+            background: var(--gray-50);
+            padding: var(--space-20) 0;
+            margin: var(--space-24) 0;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-8);
+        }
+        .value-card {
+            background: var(--white);
+            padding: var(--space-8);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-2xl);
+        }
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            color: var(--white);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-2xl);
+            margin: 0 auto var(--space-6);
+        }
+        .value-card h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: var(--space-4);
+        }
+        .value-card p {
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+        .timeline-section {
+            padding: var(--space-24) 0;
+        }
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--gradient-primary);
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: var(--space-16);
+        }
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+        .timeline-item:nth-child(even) .timeline-content {
+            text-align: left;
+        }
+        .timeline-content {
+            background: var(--white);
+            padding: var(--space-8);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            max-width: 400px;
+            position: relative;
+            margin-right: var(--space-8);
+            text-align: right;
+        }
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: 0;
+            margin-left: var(--space-8);
+        }
+        .timeline-date {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: var(--font-size-sm);
+            z-index: 2;
+            box-shadow: var(--shadow-lg);
+        }
+        .timeline-content h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: var(--space-4);
+        }
+        .timeline-content p {
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+        .team-section {
+            background: var(--gray-50);
+            padding: var(--space-20) 0;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-8);
+        }
+        .team-member {
+            background: var(--white);
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            text-align: center;
+        }
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: var(--font-size-4xl);
+            margin: var(--space-8) auto var(--space-6);
+        }
+        .team-info {
+            padding: 0 var(--space-6) var(--space-8);
+        }
+        .team-info h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: var(--space-2);
+        }
+        .team-info .role {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: var(--space-4);
+        }
+        .team-info p {
+            color: var(--gray-600);
+            line-height: 1.6;
+            font-size: var(--font-size-sm);
+        }
+        .certificates-section {
+            padding: var(--space-20) 0;
+            background: var(--white);
+        }
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-6);
+        }
+        .certificate-item {
+            background: var(--gray-50);
+            padding: var(--space-6);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        .certificate-item:hover {
+            background: var(--primary-light);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        .certificate-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-xl);
+            margin: 0 auto var(--space-4);
+        }
+        .certificate-item:hover .certificate-icon {
+            background: var(--white);
+            color: var(--primary-blue);
+        }
+        .certificate-item h4 {
+            font-weight: 700;
+            margin-bottom: var(--space-2);
+        }
+        .certificate-item p {
+            font-size: var(--font-size-sm);
+            opacity: 0.8;
+        }
+        .certificate-item:hover p {
+            opacity: 0.9;
+        }
+        .mission-vision {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: var(--space-20) 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .mission-vision::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3e%3cg fill='none' fill-rule='evenodd'%3e%3cg fill='%23ffffff' fill-opacity='0.1'%3e%3ccircle cx='30' cy='30' r='2'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e");
+        }
+        .mission-vision-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-16);
+        }
+        .mission, .vision {
+            text-align: center;
+            padding: var(--space-8);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-2xl);
+            backdrop-filter: blur(10px);
+        }
+        .mission-vision-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-3xl);
+            margin: 0 auto var(--space-6);
+        }
+        .mission h3, .vision h3 {
+            font-size: var(--font-size-2xl);
+            font-weight: 800;
+            margin-bottom: var(--space-6);
+        }
+        .mission p, .vision p {
+            font-size: var(--font-size-lg);
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+    </style>
+<link href="images/favicon.png" rel="icon"/><link href="manifest.json" rel="manifest"/><meta content="Hakkımızda | Kahraman Su Yalıtımı" property="og:title"/><meta content="Misyonumuz, vizyonumuz ve değerlerimiz. Uzman ekip ile profesyonel su yalıtım çözümleri." property="og:description"/><meta content="website" property="og:type"/><meta content="images/og-cover.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/></head>
+<body><div class="loading-screen">
+<div class="loading-content">
+<div class="logo-animation">
+<i class="fas fa-tint"></i>
+<span>KAHRAMAN</span>
+</div>
+<div class="loading-bar">
+<div class="loading-progress"></div>
+</div>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+<div class="nav-container">
+<a class="nav-logo" href="index.html">
+<i class="fas fa-tint"></i>
+<span>KAHRAMAN</span>
+</a>
+<div class="nav-menu" id="nav-menu">
+<a class="nav-link" href="index.html">Ana Sayfa</a>
+<a class="nav-link" href="hizmetler.html">Hizmetler</a>
+<a class="nav-link active" href="hakkimizda.html">Hakkımızda</a>
+<a class="nav-link" href="galeri.html">Galeri</a>
+<a class="nav-link" href="iletisim.html">İletişim</a>
+<div class="nav-cta">
+<a class="cta-btn" href="tel:+905051429289">
+<i class="fas fa-phone"></i> Hemen Ara
+                    </a>
+</div>
+</div>
+<div class="hamburger" id="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</nav>
+<!-- About Hero -->
+<section class="about-hero">
+<div class="container">
+<h1>Hakkımızda</h1>
+<p>Su yalıtımında 10 yıllık deneyim, binlerce mutlu müşteri ve %100 garanti ile hizmetinizdeyiz.</p>
+</div>
+</section>
+<!-- About Main -->
+<section class="about-main">
+<div class="container">
+<!-- About Intro -->
+<div class="about-intro">
+<div class="about-intro-text">
+<h2>Kahraman Su Yalıtımı Hikayesi</h2>
+<p>Selçuklu, Alagöz Sk. No:10, 38050 Melikgazi/Kayseri</p>
+<p>Çatıdan temel kadar, havuzdan terasa her türlü su yalıtım ihtiyacınıza profesyonel çözümler sunuyoruz. Sertifikalı malzemeler, uzman ekip ve raporlu teslim politikamız ile sektörde fark yaratan bir firma olduk.</p>
+<p>Selçuklu, Alagöz Sk. No:10, 38050 Melikgazi/Kayseri</p>
+</div>
+<div class="about-intro-image">
+<img alt="Kahraman Su Yalıtımı Ekibi" src="images/image1.jpeg"/>
+<div class="about-intro-badge">
+<div>10+ YIL</div>
+<small>DENEYİM</small>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Values Section -->
+<section class="values-section">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">DEĞERLERİMİZ</span>
+<h2 class="section-title">Bizi Farklı Kılan <span class="gradient-text">Değerlerimiz</span></h2>
+</div>
+<div class="values-grid">
+<div class="value-card">
+<div class="value-icon">
+<i class="fas fa-certificate"></i>
+</div>
+<h3>Kalite</h3>
+<p>Sadece TSE onaylı, sertifikalı malzemeler kullanıyoruz. Her projemizde en yüksek kalite standartlarını uyguluyoruz.</p>
+</div>
+<div class="value-card">
+<div class="value-icon">
+<i class="fas fa-handshake"></i>
+</div>
+<h3>Güvenilirlik</h3>
+<p>Verdiğimiz sözlerin arkasında dururuz. Müşteri memnuniyeti bizim için en önemli değerdir.</p>
+</div>
+<div class="value-card">
+<div class="value-icon">
+<i class="fas fa-user-graduate"></i>
+</div>
+<h3>Uzmanlık</h3>
+<p>Sertifikalı ve deneyimli ekibimiz ile en karmaşık su yalıtım problemlerine çözüm buluyoruz.</p>
+</div>
+<div class="value-card">
+<div class="value-icon">
+<i class="fas fa-clock"></i>
+</div>
+<h3>Zamanında Teslim</h3>
+<p>Proje planlamasını titizlikle yapıyoruz ve belirlenen sürede işlerimizi tamamlıyoruz.</p>
+</div>
+<div class="value-card">
+<div class="value-icon">
+<i class="fas fa-shield-alt"></i>
+</div>
+<h3>Garanti</h3>
+<p>İşlerimizin arkasında duruyoruz. Raporlu garanti belgesi ile müşterilerimize güvence veriyoruz.</p>
+</div>
+<div class="value-card">
+<div class="value-icon">
+<i class="fas fa-comments"></i>
+</div>
+<h3>Şeffaflık</h3>
+<p>İşleyişimiz tamamen şeffaftır. Süreç boyunca müşterilerimizi bilgilendiriyor, foto/video raporları paylaşıyoruz.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="timeline-section">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">TARİHÇEMİZ</span>
+<h2 class="section-title">Kahraman Su Yalıtımı <span class="gradient-text">Yolculuğu</span></h2>
+</div>
+<div class="timeline-container">
+<div class="timeline-line"></div>
+<div class="timeline-item">
+<div class="timeline-content">
+<h3>Kuruluş</h3>
+<p>Selçuklu, Alagöz Sk. No:10, 38050 Melikgazi/Kayseri</p>
+</div>
+<div class="timeline-date">2014</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-content">
+<h3>İlk Büyük Proje</h3>
+<p>Selçuklu, Alagöz Sk. No:10, 38050 Melikgazi/Kayseri</p>
+</div>
+<div class="timeline-date">2016</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-content">
+<h3>Ekip Genişlemesi</h3>
+<p>Artan talep üzerine ekibimizi genişlettik. Sertifikalı teknisyenler ve uzman ustalarla kadromuzu güçlendirdik.</p>
+</div>
+<div class="timeline-date">2018</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-content">
+<h3>TSE Sertifikası</h3>
+<p>Kalite yönetim sistemimizi TSE standartlarına uygun hale getirdik ve sertifikalandırdık. Bu süreçte iş kalitemiz daha da arttı.</p>
+</div>
+<div class="timeline-date">2020</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-content">
+<h3>Dijital Dönüşüm</h3>
+<p>İşlerimizi dijitalleştirdik. Online keşif, proje takibi ve müşteri hizmetleri sistemimizi devreye aldık.</p>
+</div>
+<div class="timeline-date">2022</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-content">
+<h3>500+ Proje</h3>
+<p>Selçuklu, Alagöz Sk. No:10, 38050 Melikgazi/Kayseri</p>
+</div>
+<div class="timeline-date">2024</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission & Vision -->
+<section class="mission-vision">
+<div class="container">
+<div class="mission-vision-content">
+<div class="mission">
+<div class="mission-vision-icon">
+<i class="fas fa-bullseye"></i>
+</div>
+<h3>Misyonumuz</h3>
+<p>Selçuklu, Alagöz Sk. No:10, 38050 Melikgazi/Kayseri</p>
+</div>
+<div class="vision">
+<div class="mission-vision-icon">
+<i class="fas fa-eye"></i>
+</div>
+<h3>Vizyonumuz</h3>
+<p>Türkiye'nin su yalıtım sektöründe en güvenilir ve tercih edilen markası olmak. Sürekli gelişim ve innovasyon ile müşterilerimize en iyi hizmeti sunmaya devam etmek.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Team Section -->
+<section class="team-section">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">EKİBİMİZ</span>
+<h2 class="section-title">Uzman <span class="gradient-text">Ekibimiz</span></h2>
+</div>
+<div class="team-grid">
+<div class="team-member">
+<div class="team-avatar">
+<i class="fas fa-user-tie"></i>
+</div>
+<div class="team-info">
+<h3>Murat Kahraman</h3>
+<div class="role">Kurucu &amp; Genel Müdür</div>
+<p>10+ yıllık sektör deneyimi. İnşaat mühendisi. Su yalıtım teknolojilerinde uzman.</p>
+</div>
+</div>
+<div class="team-member">
+<div class="team-avatar">
+<i class="fas fa-hard-hat"></i>
+</div>
+<div class="team-info">
+<h3>Ahmet Demir</h3>
+<div class="role">Proje Koordinatörü</div>
+<p>Sertifikalı uygulama uzmanı. 8 yıllık deneyim ile projelerin teknik sorumlusu.</p>
+</div>
+</div>
+<div class="team-member">
+<div class="team-avatar">
+<i class="fas fa-tools"></i>
+</div>
+<div class="team-info">
+<h3>Mehmet Yılmaz</h3>
+<div class="role">Usta Başı</div>
+<p>15+ yıllık uygulama deneyimi. Zorlu projelerde çözüm odaklı yaklaşımı ile tanınır.</p>
+</div>
+</div>
+<div class="team-member">
+<div class="team-avatar">
+<i class="fas fa-user-check"></i>
+</div>
+<div class="team-info">
+<h3>Fatma Arslan</h3>
+<div class="role">Kalite Kontrol</div>
+<p>Kimya mühendisi. Malzeme testleri ve kalite kontrol süreçlerinin sorumlusu.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Certificates Section -->
+<section class="certificates-section">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">SERTİFİKALARIMIZ</span>
+<h2 class="section-title">Kalite <span class="gradient-text">Belgelerimiz</span></h2>
+</div>
+<div class="certificates-grid">
+<div class="certificate-item">
+<div class="certificate-icon">
+<i class="fas fa-certificate"></i>
+</div>
+<h4>TSE Belgesi</h4>
+<p>Türk Standartları Enstitüsü kalite belgesi</p>
+</div>
+<div class="certificate-item">
+<div class="certificate-icon">
+<i class="fas fa-award"></i>
+</div>
+<h4>ISO 9001</h4>
+<p>Kalite yönetim sistemi sertifikası</p>
+</div>
+<div class="certificate-item">
+<div class="certificate-icon">
+<i class="fas fa-shield-alt"></i>
+</div>
+<h4>İSG Belgesi</h4>
+<p>İş sağlığı ve güvenliği sertifikası</p>
+</div>
+<div class="certificate-item">
+<div class="certificate-icon">
+<i class="fas fa-user-graduate"></i>
+</div>
+<h4>Uygulama Belgesi</h4>
+<p>Sertifikalı uygulama personeli belgesi</p>
+</div>
+<div class="certificate-item">
+<div class="certificate-icon">
+<i class="fas fa-leaf"></i>
+</div>
+<h4>Çevre Belgesi</h4>
+<p>Çevre dostu malzeme kullanım sertifikası</p>
+</div>
+<div class="certificate-item">
+<div class="certificate-icon">
+<i class="fas fa-handshake"></i>
+</div>
+<h4>Garanti Belgesi</h4>
+<p>15 yıla varan garanti sertifikası</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<div class="footer-logo">
+<i class="fas fa-tint"></i>
+<span>KAHRAMAN SU YALITIMI</span>
+</div>
+<p>Çatı, teras, bodrum, temel ve havuzlarda uzun ömürlü, sertifikalı sistemler. Sızıntılara karşı profesyonel çözüm.</p>
+<div class="social-links">
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+</div>
+</div>
+<div class="footer-section">
+<h3>Hizmetler</h3>
+<ul>
+<li><a href="hizmetler.html#cati-teras">Çatı &amp; Teras Yalıtımı</a></li>
+<li><a href="hizmetler.html#temel-bohcalama">Temel &amp; Bohçalama</a></li>
+<li><a href="hizmetler.html#bodrum-perde">Bodrum &amp; Perde</a></li>
+<li><a href="hizmetler.html#havuz-depo">Havuz &amp; Depo</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>Kurumsal</h3>
+<ul>
+<li><a href="hakkimizda.html">Hakkımızda</a></li>
+<li><a href="galeri.html">Projelerimiz</a></li>
+<li><a href="iletisim.html">İletişim</a></li>
+<li><a href="index.html#sss">Sık Sorulanlar</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>İletişim</h3>
+<div class="contact-info">
+<div class="contact-item">
+<i class="fas fa-phone"></i>
+<span>+90 505 142 92 89</span>
+</div>
+<div class="contact-item">
+<i class="fas fa-envelope"></i>
+<span>info@kahramansuyalitimi.com</span>
+</div>
+<div class="contact-item">
+<i class="fas fa-map-marker-alt"></i>
+<span>Selçuklu, Alagöz Sk. No:10, 38050 Melikgazi/Kayseri</span>
+</div>
+<div class="contact-item">
+<i class="fas fa-clock"></i>
+<span>7/24 Acil Servis</span>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2024 Kahraman Su Yalıtımı. Tüm hakları saklıdır.</p>
+</div>
+</div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

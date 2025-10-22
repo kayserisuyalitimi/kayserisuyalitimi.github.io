@@ -1,0 +1,2288 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kayseri Su Yalıtımı Su Yalıtımı | Profesyonel Su Yalıtım Çözümleri</title>
+<meta content="Çatı, teras, bodrum, temel ve havuzlarda uzun ömürlü, sertifikalı su yalıtım sistemleri. 7/24 hizmet, ücretsiz keşif." name="description"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<style>
+        /* CSS Variables */
+        :root {
+            --primary-blue: #1e40af;
+            --primary-light: #3b82f6;
+            --primary-dark: #1e3a8a;
+            --secondary-teal: #0d9488;
+            --secondary-light: #14b8a6;
+            --accent-orange: #f59e0b;
+            --accent-red: #dc2626;
+            --gradient-primary: linear-gradient(135deg, #1e40af 0%, #0d9488 50%, #3b82f6 100%);
+            --gradient-secondary: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+        }
+
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-700);
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: all 0.3s ease;
+        }
+
+        .loading-screen.hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translateY(-100%);
+        }
+        
+        /* Mobil için loading optimizasyonu */
+        @media (max-width: 768px) {
+            .loading-screen {
+                transition: all 0.2s ease;
+            }
+        }
+
+        .loading-content {
+            text-align: center;
+            color: var(--white);
+        }
+
+        .logo-animation {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+        }
+
+        .nav-logo i {
+            font-size: 1.5rem;
+            color: var(--secondary-teal);
+        }
+
+        .nav-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+        }
+
+        .nav-menu.active {
+            display: flex;
+        }
+
+        .nav-link {
+            padding: 0.75rem 0;
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid var(--gray-100);
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-blue);
+        }
+
+        .nav-cta {
+            margin-top: 1rem;
+        }
+
+        .cta-btn {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--gray-700);
+            transition: 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        /* Page Sections */
+        .page-section {
+            display: none;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-primary);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/image1.jpeg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 0.875rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s;
+            min-width: 200px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: var(--accent-orange);
+            color: var(--white);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            transform: translateY(-2px);
+        }
+
+        .hero-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            opacity: 0.9;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .feature-item i {
+            color: var(--accent-orange);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 3rem 0;
+            background: var(--gray-50);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.25rem;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-weight: 600;
+            color: var(--gray-600);
+            font-size: 0.875rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 3rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: var(--gradient-secondary);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--gray-800);
+        }
+
+        .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .services-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            color: var(--white);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--gray-800);
+        }
+
+        .service-card p {
+            color: var(--gray-600);
+            margin-bottom: 1rem;
+        }
+
+        .service-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-features span {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+        }
+
+        .service-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Why Choose Us */
+        .why-section {
+            padding: 3rem 0;
+            background: var(--gray-50);
+        }
+
+        .why-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .why-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .why-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            color: var(--white);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .why-content h4 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--gray-800);
+        }
+
+        .why-content p {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 3rem 0;
+        }
+
+        .process-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.875rem;
+        }
+
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 1rem auto;
+        }
+
+        .process-step h3 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--gray-800);
+        }
+
+        .process-step p {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 3rem 0;
+            background: var(--gray-50);
+        }
+
+        .contact-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .contact-info, .contact-form {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h3, .contact-form h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--gray-50);
+            border-radius: 10px;
+        }
+
+        .contact-item-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-item-content h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-item-content p {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--gray-700);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Gallery */
+        .gallery-section {
+            padding: 3rem 0;
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            background: var(--white);
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: var(--white);
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-category {
+            position: absolute;
+            top: 0.5rem;
+            left: 0.5rem;
+            background: var(--gradient-secondary);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 3rem 0;
+        }
+
+        .about-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .about-intro h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .about-intro p {
+            color: var(--gray-600);
+            margin-bottom: 1rem;
+        }
+
+        .values-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+
+        .value-card h3 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--gray-800);
+        }
+
+        .value-card p {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .team-member {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2rem;
+            margin: 0 auto 1rem;
+        }
+
+        .team-member h4 {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: var(--gray-800);
+        }
+
+        .team-role {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .team-member p {
+            color: var(--gray-600);
+            font-size: 0.75rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient-primary);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            color: var(--white);
+            padding: 2rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo i {
+            color: var(--secondary-teal);
+        }
+
+        .footer-section p {
+            color: #9CA3AF;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #9CA3AF;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 1rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #6B7280;
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            .hero-features {
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .nav-menu {
+                position: static;
+                display: flex;
+                flex-direction: row;
+                width: auto;
+                background: transparent;
+                box-shadow: none;
+                padding: 0;
+                gap: 2rem;
+                align-items: center;
+            }
+            
+            .nav-link {
+                border-bottom: none;
+                padding: 0;
+            }
+            
+            .nav-cta {
+                margin-top: 0;
+            }
+            
+            .hamburger {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.25rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .values-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .process-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Utilities */
+        .text-center { text-align: center; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-8 { margin-bottom: 2rem; }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .no-scroll {
+            overflow: hidden;
+        }
+    </style>
+<script>
+        // Instant loading screen hide for mobile
+        (function() {
+            setTimeout(function() {
+                var loadingScreen = document.getElementById('loadingScreen');
+                if (loadingScreen) {
+                    loadingScreen.style.display = 'none';
+                }
+            }, window.innerWidth <= 768 ? 100 : 800);
+        })();
+    </script>
+</head>
+<body>
+<!-- Loading Screen -->
+<div class="loading-screen" id="loadingScreen">
+<div class="loading-content">
+<div class="logo-animation">
+                🏠 KAHRAMAN
+            </div>
+<div>Yükleniyor...</div>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+<div class="nav-container">
+<a class="nav-logo" href="index.html">
+<i class="fas fa-tint"></i>
+<span>KAHRAMAN</span>
+</a>
+<div class="nav-menu" id="navMenu">
+<a class="nav-link active" data-page="home" href="#">Ana Sayfa</a>
+<a class="nav-link" data-page="services" href="#">Hizmetler</a>
+<a class="nav-link" data-page="about" href="#">Hakkımızda</a>
+<a class="nav-link" data-page="gallery" href="#">Galeri</a>
+<a class="nav-link" data-page="contact" href="#">İletişim</a>
+<div class="nav-cta">
+<a class="cta-btn" href="tel:+905051429289">
+<i class="fas fa-phone"></i> Hemen Ara
+                    </a>
+</div>
+</div>
+<div class="hamburger" id="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</nav>
+<!-- Home Page -->
+<div class="page-section active" id="home">
+<!-- Hero Section -->
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<h1 class="hero-title">
+<span class="gradient-text">Su Yalıtımında</span><br/>
+<span>Profesyonel Çözüm</span>
+</h1>
+<p class="hero-subtitle">
+                        Çatı, teras, bodrum, temel ve havuzlarda uzun ömürlü, sertifikalı sistemler. 
+                        Su sızıntılarına karşı <strong>%100 garanti</strong> ile hizmet veriyoruz.
+                    </p>
+<div class="hero-buttons">
+<a class="btn-primary" data-page="services" href="#">
+<span>Hizmetlerimizi Keşfet</span>
+<i class="fas fa-arrow-right"></i>
+</a>
+<a class="btn-secondary" href="tel:+905051429289">
+<i class="fas fa-phone"></i>
+<span>Ücretsiz Keşif</span>
+</a>
+</div>
+<div class="hero-features">
+<div class="feature-item">
+<i class="fas fa-shield-alt"></i>
+<span>Sertifikalı Sistem</span>
+</div>
+<div class="feature-item">
+<i class="fas fa-clock"></i>
+<span>1-3 Gün Teslim</span>
+</div>
+<div class="feature-item">
+<i class="fas fa-medal"></i>
+<span>Raporlu Garanti</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="stats-section">
+<div class="container">
+<div class="stats-grid">
+<div class="stat-item fade-in">
+<div class="stat-icon">
+<i class="fas fa-home"></i>
+</div>
+<div class="stat-number" data-target="500">0</div>
+<div class="stat-label">Tamamlanan Proje</div>
+</div>
+<div class="stat-item fade-in">
+<div class="stat-icon">
+<i class="fas fa-users"></i>
+</div>
+<div class="stat-number" data-target="300">0</div>
+<div class="stat-label">Mutlu Müşteri</div>
+</div>
+<div class="stat-item fade-in">
+<div class="stat-icon">
+<i class="fas fa-calendar"></i>
+</div>
+<div class="stat-number" data-target="10">0</div>
+<div class="stat-label">Yıl Deneyim</div>
+</div>
+<div class="stat-item fade-in">
+<div class="stat-icon">
+<i class="fas fa-certificate"></i>
+</div>
+<div class="stat-number" data-target="100">0</div>
+<div class="stat-label">Garanti Oranı (%)</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Overview -->
+<section class="services-section">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">HİZMETLERİMİZ</span>
+<h2 class="section-title">Su Yalıtımında <span class="gradient-text">Uzman Çözümler</span></h2>
+<p>Her türlü yapı için özel tasarlanmış, uzun ömürlü ve sertifikalı su yalıtım sistemleri</p>
+</div>
+<div class="services-grid">
+<div class="service-card fade-in">
+<div class="service-icon">
+<i class="fas fa-home"></i>
+</div>
+<h3>Çatı &amp; Teras Yalıtımı</h3>
+<p>Bitüm membran UV dayanıklı kaplama, detay çözümleri ve su testleri ile profesyonel hizmet</p>
+<div class="service-features">
+<span>UV Dayanıklı</span>
+<span>Su Testi</span>
+<span>Detay Çözüm</span>
+</div>
+<a class="service-link" data-page="services" href="#">
+<span>Detaylar</span>
+<i class="fas fa-arrow-right"></i>
+</a>
+</div>
+<div class="service-card fade-in">
+<div class="service-icon">
+<i class="fas fa-building"></i>
+</div>
+<h3>Temel &amp; Bohçalama</h3>
+<p>Pozitif/negatif basınca dayanıklı kristalize ve membran sistemleri ile güçlü koruma</p>
+<div class="service-features">
+<span>Kristalize Sistem</span>
+<span>Membran</span>
+<span>Basınç Dayanımı</span>
+</div>
+<a class="service-link" data-page="services" href="#">
+<span>Detaylar</span>
+<i class="fas fa-arrow-right"></i>
+</a>
+</div>
+<div class="service-card fade-in">
+<div class="service-icon">
+<i class="fas fa-layer-group"></i>
+</div>
+<h3>Bodrum &amp; Perde</h3>
+<p>XPS, EPS drenaj levhası ile perde yalıtımı ve nem kontrolü</p>
+<div class="service-features">
+<span>XPS Levha</span>
+<span>EPS Sistem</span>
+<span>Drenaj</span>
+</div>
+<a class="service-link" data-page="services" href="#">
+<span>Detaylar</span>
+<i class="fas fa-arrow-right"></i>
+</a>
+</div>
+<div class="service-card fade-in">
+<div class="service-icon">
+<i class="fas fa-swimming-pool"></i>
+</div>
+<h3>Havuz &amp; Depo</h3>
+<p>Kimyasal TSE içme suyu onaylı sürme izolasyonu ve negatif basınca çözüm</p>
+<div class="service-features">
+<span>TSE Onaylı</span>
+<span>Kimyasal Dayanım</span>
+<span>İçme Suyu</span>
+</div>
+<a class="service-link" data-page="services" href="#">
+<span>Detaylar</span>
+<i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="why-section">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">NEDEN BİZ?</span>
+<h2 class="section-title">Bizi <span class="gradient-text">Neden Seçmelisiniz?</span></h2>
+</div>
+<div class="why-grid">
+<div class="why-item fade-in">
+<div class="why-icon">
+<i class="fas fa-user-graduate"></i>
+</div>
+<div class="why-content">
+<h4>Uzman Ekip</h4>
+<p>Sertifikalı uygulamacılar ile profesyonel hizmet</p>
+</div>
+</div>
+<div class="why-item fade-in">
+<div class="why-icon">
+<i class="fas fa-cog"></i>
+</div>
+<div class="why-content">
+<h4>Doğru Malzeme</h4>
+<p>İklim ve detaya göre sistem seçimi</p>
+</div>
+</div>
+<div class="why-item fade-in">
+<div class="why-icon">
+<i class="fas fa-eye"></i>
+</div>
+<div class="why-content">
+<h4>Şeffaf Süreç</h4>
+<p>Keşif foto/video rapor, net iş planı</p>
+</div>
+</div>
+<div class="why-item fade-in">
+<div class="why-icon">
+<i class="fas fa-shield-alt"></i>
+</div>
+<div class="why-content">
+<h4>Garanti</h4>
+<p>İş bitimi test ve raporlu teslim</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process -->
+<section class="process-section">
+<div class="container">
+<div class="section-header">
+<span class="section-tag">SÜRECİMİZ</span>
+<h2 class="section-title">Nasıl <span class="gradient-text">Çalışıyoruz?</span></h2>
+</div>
+<div class="process-grid">
+<div class="process-step fade-in">
+<div class="step-number">1</div>
+<div class="step-icon">
+<i class="fas fa-search"></i>
+</div>
+<h3>Keşif ve Analiz</h3>
+<p>Detaylı keşif yaparak sorun tespiti ve çözüm önerisi</p>
+</div>
+<div class="process-step fade-in">
+<div class="step-number">2</div>
+<div class="step-icon">
+<i class="fas fa-clipboard-list"></i>
+</div>
+<h3>Planlama</h3>
+<p>İklim, detay ve bütçeye göre sistem seçimi</p>
+</div>
+<div class="process-step fade-in">
+<div class="step-number">3</div>
+<div class="step-icon">
+<i class="fas fa-tools"></i>
+</div>
+<h3>Uygulama</h3>
+<p>Sertifikalı ekibimiz ile profesyonel uygulama</p>
+</div>
+<div class="process-step fade-in">
+<div class="step-number">4</div>
+<div class="step-icon">
+<i class="fas fa-check-circle"></i>
+</div>
+<h3>Test ve Teslim</h3>
+<p>Su basınç testi ile kontrol ve garanti teslimi</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Services Page -->
+<div class="page-section" id="services">
+<section class="hero">
+<div class="container">
+<h1 class="hero-title">Hizmetlerimiz</h1>
+<p class="hero-subtitle">Su yalıtımında profesyonel çözümler. Her yapı tipine uygun, uzun ömürlü ve sertifikalı sistemler.</p>
+</div>
+</section>
+<section class="services-section">
+<div class="container">
+<div class="services-grid">
+<div class="service-card fade-in">
+<div class="service-icon">
+<i class="fas fa-home"></i>
+</div>
+<h3>Çatı &amp; Teras Yalıtımı</h3>
+<p>Bitüm membran UV dayanıklı kaplama ile profesyonel çözüm. Detay işlemleri ve su testleri dahil.</p>
+<div class="service-features">
+<span>UV Dayanıklı Membran</span>
+<span>Su Basınç Testi</span>
+<span>15 Yıl Garanti</span>
+<span>Detay Çözümleri</span>
+</div>
+<div class="mb-4">
+<strong>Uygulama Süreci:</strong>
+<ul style="margin-top: 0.5rem; padding-left: 1rem;">
+<li>Yüzey hazırlığı ve temizlik</li>
+<li>Astar uygulaması</li>
+<li>Membran serimi ve kaynak</li>
+<li>Detay işlemleri ve test</li>
+</ul>
+</div>
+</div>
+<div class="service-card fade-in">
+<div class="service-icon">
+<i class="fas fa-building"></i>
+</div>
+<h3>Temel &amp; Bohçalama</h3>
+<p>Kristalize ve membran sistemleri ile güçlü temel koruması. Pozitif/negatif basınca dayanıklı çözümler.</p>
+<div class="service-features">
+<span>Kristalize Sistem</span>
+<span>Membran Koruma</span>
+<span>Basınç Dayanımı</span>
+<span>Uzun Ömür</span>
+</div>
+<div class="mb-4">
+<strong>Özellikler:</strong>
+<ul style="margin-top: 0.5rem; padding-left: 1rem;">
+<li>Betona nüfuz eden kristal yapı</li>
+<li>Yüksek dayanımlı membran</li>
+<li>Yeraltı suyuna karşı koruma</li>
+<li>Yapı ömrü boyunca garanti</li>
+</ul>
+</div>
+</div>
+<div class="service-card fade-in">
+<div class="service-icon">
+<i class="fas fa-layer-group"></i>
+</div>
+<h3>Bodrum &amp; Perde Yalıtımı</h3>
+<p>XPS, EPS drenaj levhası ile nem kontrolü. Su yalıtımı ile birlikte ısı yalıtımı avantajı.</p>
+<div class="service-features">
+<span>XPS Levha</span>
+<span>EPS Sistem</span>
+<span>Drenaj Sistemi</span>
+<span>Isı Yalıtımı</span>
+</div>
+<div class="mb-4">
+<strong>Avantajlar:</strong>
+<ul style="margin-top: 0.5rem; padding-left: 1rem;">
+<li>Nem sorunu kalıcı çözüm</li>
+<li>Enerji tasarrufu</li>
+<li>Çifte koruma sistemi</li>
+<li>Uzun ömürlü malzemeler</li>
+</ul>
+</div>
+</div>
+<div class="service-card fade-in">
+<div class="service-icon">
+<i class="fas fa-swimming-pool"></i>
+</div>
+<h3>Havuz &amp; Depo Yalıtımı</h3>
+<p>TSE içme suyu onaylı kimyasal dayanımlı sistemler. Sağlık ve güvenlik standartlarında hizmet.</p>
+<div class="service-features">
+<span>TSE Onaylı</span>
+<span>İçme Suyu Uygun</span>
+<span>Kimyasal Dayanım</span>
+<span>%100 Su Geçirmez</span>
+</div>
+<div class="mb-4">
+<strong>Özel Özellikler:</strong>
+<ul style="margin-top: 0.5rem; padding-left: 1rem;">
+<li>Klor ve kimyasallara dayanıklı</li>
+<li>Sağlık açısından güvenli</li>
+<li>Yeraltı basıncına karşı etkili</li>
+<li>Profesyonel uygulama</li>
+</ul>
+</div>
+</div>
+<div class="service-card fade-in">
+<div class="service-icon">
+<i class="fas fa-paint-brush"></i>
+</div>
+<h3>Poliüretan &amp; Epoksi</h3>
+<p>Dilitasyon, balkon/teras ve zorlu yüzeylerde yüksek performans sistemleri.</p>
+<div class="service-features">
+<span>Elastik Yapı</span>
+<span>Yüksek Dayanım</span>
+<span>Hızlı Uygulama</span>
+<span>Estetik Görünüm</span>
+</div>
+</div>
+<div class="service-card fade-in">
+<div class="service-icon">
+<i class="fas fa-window-maximize"></i>
+</div>
+<h3>Pencere &amp; Baca Yalıtımı</h3>
+<p>Pencere kör kasalarında band yalıtım. Su ve ses yalıtımı bir arada.</p>
+<div class="service-features">
+<span>Su Yalıtımı</span>
+<span>Ses Yalıtımı</span>
+<span>Montaj Bandı</span>
+<span>Uzun Ömür</span>
+</div>
+</div>
+<div class="service-card fade-in">
+<div class="service-icon">
+<i class="fas fa-fire"></i>
+</div>
+<h3>Taş &amp; Cam Yünü Yalıtımı</h3>
+<p>Çatı aralarında ısı yalıtımı. Enerji tasarrufu ve konfor artışı sağlar.</p>
+<div class="service-features">
+<span>Isı Yalıtımı</span>
+<span>Enerji Tasarrufu</span>
+<span>Yangın Güvenliği</span>
+<span>Ses Yalıtımı</span>
+</div>
+</div>
+<div class="service-card fade-in">
+<div class="service-icon">
+<i class="fas fa-tape"></i>
+</div>
+<h3>Özel Bantlar</h3>
+<p>Şişen bant, dilitasyon bandı, pencere bandı gibi özel uygulamalar.</p>
+<div class="service-features">
+<span>Şişen Bant</span>
+<span>Dilitasyon Bandı</span>
+<span>Pencere Bandı</span>
+<span>Pah Bandı</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- About Page -->
+<div class="page-section" id="about">
+<section class="hero">
+<div class="container">
+<h1 class="hero-title">Hakkımızda</h1>
+<p class="hero-subtitle">Su yalıtımında 10 yıllık deneyim, binlerce mutlu müşteri ve %100 garanti ile hizmetinizdeyiz.</p>
+</div>
+</section>
+<section class="about-section">
+<div class="container">
+<div class="about-intro">
+<h2>Kayseri Su Yalıtımı Su Yalıtımı Hikayesi</h2>
+<p>Selçuklu, Alagöz Sk. No:10, 38050 Melikgazi/Kayseri</p>
+<p>Çatıdan temel kadar, havuzdan terasa her türlü su yalıtım ihtiyacınıza profesyonel çözümler sunuyoruz. Sertifikalı malzemeler, uzman ekip ve raporlu teslim politikamız ile sektörde fark yaratan bir firma olduk.</p>
+<p>Selçuklu, Alagöz Sk. No:10, 38050 Melikgazi/Kayseri</p>
+</div>
+<div class="section-header">
+<span class="section-tag">DEĞERLERİMİZ</span>
+<h2 class="section-title">Bizi Farklı Kılan <span class="gradient-text">Değerlerimiz</span></h2>
+</div>
+<div class="values-grid">
+<div class="value-card fade-in">
+<div class="value-icon">
+<i class="fas fa-certificate"></i>
+</div>
+<h3>Kalite</h3>
+<p>Sadece TSE onaylı, sertifikalı malzemeler kullanıyoruz. Her projemizde en yüksek kalite standartlarını uyguluyoruz.</p>
+</div>
+<div class="value-card fade-in">
+<div class="value-icon">
+<i class="fas fa-handshake"></i>
+</div>
+<h3>Güvenilirlik</h3>
+<p>Verdiğimiz sözlerin arkasında dururuz. Müşteri memnuniyeti bizim için en önemli değerdir.</p>
+</div>
+<div class="value-card fade-in">
+<div class="value-icon">
+<i class="fas fa-user-graduate"></i>
+</div>
+<h3>Uzmanlık</h3>
+<p>Sertifikalı ve deneyimli ekibimiz ile en karmaşık su yalıtım problemlerine çözüm buluyoruz.</p>
+</div>
+<div class="value-card fade-in">
+<div class="value-icon">
+<i class="fas fa-clock"></i>
+</div>
+<h3>Zamanında Teslim</h3>
+<p>Proje planlamasını titizlikle yapıyoruz ve belirlenen sürede işlerimizi tamamlıyoruz.</p>
+</div>
+<div class="value-card fade-in">
+<div class="value-icon">
+<i class="fas fa-shield-alt"></i>
+</div>
+<h3>Garanti</h3>
+<p>İşlerimizin arkasında duruyoruz. Raporlu garanti belgesi ile müşterilerimize güvence veriyoruz.</p>
+</div>
+<div class="value-card fade-in">
+<div class="value-icon">
+<i class="fas fa-comments"></i>
+</div>
+<h3>Şeffaflık</h3>
+<p>İşleyişimiz tamamen şeffaftır. Süreç boyunca müşterilerimizi bilgilendiriyor, foto/video raporları paylaşıyoruz.</p>
+</div>
+</div>
+<div class="section-header">
+<span class="section-tag">EKİBİMİZ</span>
+<h2 class="section-title">Uzman <span class="gradient-text">Ekibimiz</span></h2>
+</div>
+<div class="team-grid">
+<div class="team-member fade-in">
+<div class="team-avatar">
+<i class="fas fa-user-tie"></i>
+</div>
+<h4>Murat Kayseri Su Yalıtımı</h4>
+<div class="team-role">Kurucu &amp; Genel Müdür</div>
+<p>10+ yıllık sektör deneyimi. İnşaat mühendisi. Su yalıtım teknolojilerinde uzman.</p>
+</div>
+<div class="team-member fade-in">
+<div class="team-avatar">
+<i class="fas fa-hard-hat"></i>
+</div>
+<h4>Ahmet Demir</h4>
+<div class="team-role">Proje Koordinatörü</div>
+<p>Sertifikalı uygulama uzmanı. 8 yıllık deneyim ile projelerin teknik sorumlusu.</p>
+</div>
+<div class="team-member fade-in">
+<div class="team-avatar">
+<i class="fas fa-tools"></i>
+</div>
+<h4>Mehmet Yılmaz</h4>
+<div class="team-role">Usta Başı</div>
+<p>15+ yıllık uygulama deneyimi. Zorlu projelerde çözüm odaklı yaklaşımı ile tanınır.</p>
+</div>
+<div class="team-member fade-in">
+<div class="team-avatar">
+<i class="fas fa-user-check"></i>
+</div>
+<h4>Fatma Arslan</h4>
+<div class="team-role">Kalite Kontrol</div>
+<p>Kimya mühendisi. Malzeme testleri ve kalite kontrol süreçlerinin sorumlusu.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Gallery Page -->
+<div class="page-section" id="gallery">
+<section class="hero">
+<div class="container">
+<h1 class="hero-title">Projelerimiz</h1>
+<p class="hero-subtitle">Su yalıtımında gerçekleştirdiğimiz başarılı projeler. Kalite ve güvenin somut örnekleri.</p>
+</div>
+</section>
+<section class="gallery-section">
+<div class="container">
+<div class="gallery-filters">
+<button class="filter-btn active" data-filter="all">
+<i class="fas fa-th-large"></i> Tümü
+                    </button>
+<button class="filter-btn" data-filter="cati">
+<i class="fas fa-home"></i> Çatı
+                    </button>
+<button class="filter-btn" data-filter="teras">
+<i class="fas fa-building"></i> Teras
+                    </button>
+<button class="filter-btn" data-filter="bodrum">
+<i class="fas fa-layer-group"></i> Bodrum
+                    </button>
+<button class="filter-btn" data-filter="havuz">
+<i class="fas fa-swimming-pool"></i> Havuz
+                    </button>
+</div>
+<div class="gallery-grid">
+<div class="gallery-item" data-category="cati">
+<img alt="Villa Çatı Yalıtımı" src="images/image1.jpeg"/>
+<div class="gallery-category">Çatı Yalıtımı</div>
+<div class="gallery-overlay">
+<h4>Villa Çatı Yalıtımı</h4>
+<p>Beykoz'da 350m² villa çatısında bitüm membran uygulaması</p>
+</div>
+</div>
+<div class="gallery-item" data-category="cati">
+<img alt="Apartman Çatı Yalıtımı" src="images/image2.jpeg"/>
+<div class="gallery-category">Çatı Yalıtımı</div>
+<div class="gallery-overlay">
+<h4>Apartman Çatı Yalıtımı</h4>
+<p>Şişli'de 8 katlı apartman çatısında kristalize sistem</p>
+</div>
+</div>
+<div class="gallery-item" data-category="teras">
+<img alt="Teras Bahçe Yalıtımı" src="images/image3.jpeg"/>
+<div class="gallery-category">Teras Yalıtımı</div>
+<div class="gallery-overlay">
+<h4>Teras Bahçe Yalıtımı</h4>
+<p>Kadıköy'de lüks rezidans teras bahçesinde PVC membran</p>
+</div>
+</div>
+<div class="gallery-item" data-category="teras">
+<img alt="Ofis Binası Teras" src="images/image4.jpeg"/>
+<div class="gallery-category">Teras Yalıtımı</div>
+<div class="gallery-overlay">
+<h4>Ofis Binası Teras</h4>
+<p>Levent'te plaza binasında 1200m² teras alanı</p>
+</div>
+</div>
+<div class="gallery-item" data-category="bodrum">
+<img alt="Bodrum Perde Yalıtımı" src="images/image5.jpeg"/>
+<div class="gallery-category">Bodrum Yalıtımı</div>
+<div class="gallery-overlay">
+<h4>Bodrum Perde Yalıtımı</h4>
+<p>Sarıyer'de müstakil evde XPS levha uygulaması</p>
+</div>
+</div>
+<div class="gallery-item" data-category="havuz">
+<img alt="Özel Havuz Yalıtımı" src="images/image1.jpeg"/>
+<div class="gallery-category">Havuz Yalıtımı</div>
+<div class="gallery-overlay">
+<h4>Özel Havuz Yalıtımı</h4>
+<p>Büyükada'da TSE onaylı sürme izolasyon</p>
+</div>
+</div>
+</div>
+<div class="section-header">
+<span class="section-tag">BAŞARI RAKAMLARI</span>
+<h2 class="section-title">Projelerimizde <span class="gradient-text">Başarı</span></h2>
+</div>
+<div class="stats-grid">
+<div class="stat-item fade-in">
+<div class="stat-icon">
+<i class="fas fa-project-diagram"></i>
+</div>
+<div class="stat-number">150+</div>
+<div class="stat-label">Tamamlanan Proje</div>
+</div>
+<div class="stat-item fade-in">
+<div class="stat-icon">
+<i class="fas fa-ruler-combined"></i>
+</div>
+<div class="stat-number">50.000</div>
+<div class="stat-label">m² Yalıtım Alanı</div>
+</div>
+<div class="stat-item fade-in">
+<div class="stat-icon">
+<i class="fas fa-star"></i>
+</div>
+<div class="stat-number">%98</div>
+<div class="stat-label">Müşteri Memnuniyeti</div>
+</div>
+<div class="stat-item fade-in">
+<div class="stat-icon">
+<i class="fas fa-award"></i>
+</div>
+<div class="stat-number">15</div>
+<div class="stat-label">Yıl Garanti</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Contact Page -->
+<div class="page-section" id="contact">
+<section class="hero">
+<div class="container">
+<h1 class="hero-title">İletişim</h1>
+<p class="hero-subtitle">Su yalıtım problemleriniz için 7/24 hizmetinizdeyiz. Ücretsiz keşif ve profesyonel danışmanlık.</p>
+</div>
+</section>
+<section class="contact-section">
+<div class="container">
+<div class="contact-grid">
+<div class="contact-info">
+<h3>Bizimle İletişime Geçin</h3>
+<div class="contact-item">
+<div class="contact-item-icon">
+<i class="fas fa-phone"></i>
+</div>
+<div class="contact-item-content">
+<h4>Telefon</h4>
+<p><strong>+90 505 142 92 89</strong><br/>
+                                Pazartesi - Pazar: 08:00 - 20:00<br/>
+                                Acil durumlar için 7/24</p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-item-icon">
+<i class="fab fa-whatsapp"></i>
+</div>
+<div class="contact-item-content">
+<h4>WhatsApp</h4>
+<p><strong>+90 505 142 92 89</strong><br/>
+                                Hızlı iletişim ve fotoğraf paylaşımı<br/>
+                                Anında yanıt garantisi</p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-item-icon">
+<i class="fas fa-envelope"></i>
+</div>
+<div class="contact-item-content">
+<h4>E-posta</h4>
+<p><strong>info@kahramansuyalitimi.com</strong><br/>
+                                Detaylı proje bilgileri<br/>
+                                24 saat içinde yanıt</p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-item-icon">
+<i class="fas fa-map-marker-alt"></i>
+</div>
+<div class="contact-item-content">
+<h4>Hizmet Alanı</h4>
+<p><strong>Selçuklu, Alagöz Sk. No:10, 38050 Melikgazi/Kayseri</strong><br/>
+                                Tüm ilçelerde hizmet<br/>
+                                Ücretsiz keşif</p>
+</div>
+</div>
+</div>
+<div class="contact-form">
+<h3>Ücretsiz Teklif Formu</h3>
+<p class="mb-4">Projeniз hakkında bilgi verin, size en uygun çözümü önerelim.</p>
+<form id="contactForm">
+<div class="form-group">
+<label for="name">Ad Soyad *</label>
+<input id="name" name="name" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="phone">Telefon *</label>
+<input id="phone" name="phone" required="" type="tel"/>
+</div>
+<div class="form-group">
+<label for="email">E-posta</label>
+<input id="email" name="email" type="email"/>
+</div>
+<div class="form-group">
+<label for="service">Hizmet Türü *</label>
+<select id="service" name="service" required="">
+<option value="">Hizmet seçiniz</option>
+<option value="cati">Çatı Yalıtımı</option>
+<option value="teras">Teras Yalıtımı</option>
+<option value="bodrum">Bodrum Yalıtımı</option>
+<option value="temel">Temel Yalıtımı</option>
+<option value="havuz">Havuz Yalıtımı</option>
+<option value="diger">Diğer</option>
+</select>
+</div>
+<div class="form-group">
+<label for="address">Selçuklu, Alagöz Sk. No:10, 38050 Melikgazi/Kayseri</label>
+<input id="address" name="address" placeholder="İl, İlçe" type="text"/>
+</div>
+<div class="form-group">
+<label for="message">Proje Detayları</label>
+<textarea id="message" name="message" placeholder="Projeniz hakkında detaylı bilgi verin..."></textarea>
+</div>
+<button class="submit-btn" type="submit">
+<i class="fas fa-paper-plane"></i> Teklif Talep Et
+                            </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- CTA Section -->
+<section class="cta-section">
+<div class="container">
+<h2>Su Sızıntı Problemlerinizi <span class="gradient-text">Çözelim!</span></h2>
+<p>Uzman ekibimiz ile ücretsiz keşif hizmeti alın. Garantili çözüm için hemen iletişime geçin.</p>
+<div class="cta-buttons">
+<a class="btn-primary" href="tel:+905051429289">
+<i class="fas fa-phone"></i>
+<span>Hemen Arayın</span>
+</a>
+<a class="btn-whatsapp" href="https://wa.me/905051429289">
+<i class="fab fa-whatsapp"></i>
+<span>WhatsApp</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<div class="footer-logo">
+<i class="fas fa-tint"></i>
+<span>KAHRAMAN SU YALITIMI</span>
+</div>
+<p>Çatı, teras, bodrum, temel ve havuzlarda uzun ömürlü, sertifikalı sistemler. Sızıntılara karşı profesyonel çözüm.</p>
+<div class="social-links">
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+</div>
+</div>
+<div class="footer-section">
+<h3>Hizmetler</h3>
+<ul>
+<li><a data-page="services" href="#">Çatı &amp; Teras Yalıtımı</a></li>
+<li><a data-page="services" href="#">Temel &amp; Bohçalama</a></li>
+<li><a data-page="services" href="#">Bodrum &amp; Perde</a></li>
+<li><a data-page="services" href="#">Havuz &amp; Depo</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>Kurumsal</h3>
+<ul>
+<li><a data-page="about" href="#">Hakkımızda</a></li>
+<li><a data-page="gallery" href="#">Projelerimiz</a></li>
+<li><a data-page="contact" href="#">İletişim</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>İletişim</h3>
+<div class="contact-info">
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+<i class="fas fa-phone" style="color: var(--primary-light);"></i>
+<span>+90 505 142 92 89</span>
+</div>
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+<i class="fas fa-envelope" style="color: var(--primary-light);"></i>
+<span>info@kahramansuyalitimi.com</span>
+</div>
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+<i class="fas fa-map-marker-alt" style="color: var(--primary-light);"></i>
+<span>Selçuklu, Alagöz Sk. No:10, 38050 Melikgazi/Kayseri</span>
+</div>
+<div style="display: flex; align-items: center; gap: 0.5rem;">
+<i class="fas fa-clock" style="color: var(--primary-light);"></i>
+<span>7/24 Acil Servis</span>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2024 Kayseri Su Yalıtımı Su Yalıtımı. Tüm hakları saklıdır.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Immediate hide loading screen function
+        function hideLoadingScreen() {
+            const loadingScreen = document.getElementById('loadingScreen');
+            if (loadingScreen) {
+                loadingScreen.classList.add('hide');
+                // Force remove after transition
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 300);
+            }
+            document.body.classList.remove('no-scroll');
+        }
+        
+        // Multiple loading screen hide triggers
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide immediately on mobile
+            if (window.innerWidth <= 768) {
+                setTimeout(hideLoadingScreen, 200);
+            } else {
+                setTimeout(hideLoadingScreen, 1000);
+            }
+            
+            // Initialize app
+            initializeApp();
+        });
+        
+        // Backup hide on window load
+        window.addEventListener('load', hideLoadingScreen);
+        
+        // Emergency fallback - always hide after 2 seconds
+        setTimeout(hideLoadingScreen, 2000);
+
+        function initializeApp() {
+            // Initialize all components
+            try {
+                initNavigation();
+                initAnimations();
+                initCounters();
+                initGallery();
+                initContactForm();
+                initMobileMenu();
+            } catch (error) {
+                console.log('Init error:', error);
+                // Force hide loading screen if error occurs
+                hideLoadingScreen();
+            }
+        }
+
+        // Navigation System
+        function initNavigation() {
+            const navLinks = document.querySelectorAll('.nav-link, [data-page]');
+            const pages = document.querySelectorAll('.page-section');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetPage = this.getAttribute('data-page');
+                    
+                    if (targetPage) {
+                        showPage(targetPage);
+                        updateActiveNavLink(this);
+                        
+                        // Close mobile menu if open
+                        closeMobileMenu();
+                    }
+                });
+            });
+
+            function showPage(pageId) {
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                const targetPage = document.getElementById(pageId);
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                    window.scrollTo(0, 0);
+                    
+                    // Trigger animations for visible page
+                    setTimeout(() => {
+                        triggerAnimations();
+                    }, 100);
+                }
+            }
+
+            function updateActiveNavLink(activeLink) {
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                if (activeLink && activeLink.classList.contains('nav-link')) {
+                    activeLink.classList.add('active');
+                }
+            }
+        }
+
+        // Mobile Menu
+        function initMobileMenu() {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('navMenu');
+
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                document.body.classList.toggle('no-scroll');
+            });
+
+            // Close menu when clicking nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+        }
+
+        function closeMobileMenu() {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('navMenu');
+            
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        }
+
+        // Animations
+        function initAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            document.querySelectorAll('.fade-in').forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        function triggerAnimations() {
+            const elements = document.querySelectorAll('.page-section.active .fade-in');
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.classList.add('visible');
+                }, index * 100);
+            });
+        }
+
+        // Counter Animation
+        function initCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            function animateCounter(counter) {
+                const target = parseInt(counter.getAttribute('data-target')) || parseInt(counter.textContent);
+                const speed = 2000; // 2 seconds
+                const increment = target / (speed / 16); // 60 FPS
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current);
+                    }
+                }, 16);
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        }
+
+        // Gallery
+        function initGallery() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter items
+                    galleryItems.forEach(item => {
+                        const category = item.getAttribute('data-category');
+                        
+                        if (filter === 'all' || category === filter) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 10);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        }
+
+        // Contact Form
+        function initContactForm() {
+            const form = document.getElementById('contactForm');
+            
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(form);
+                    const data = {};
+                    formData.forEach((value, key) => {
+                        data[key] = value;
+                    });
+                    
+                    // Basic validation
+                    if (!data.name || !data.phone || !data.service) {
+                        alert('Lütfen zorunlu alanları doldurun.');
+                        return;
+                    }
+                    
+                    // Show success message
+                    showSuccessMessage();
+                    form.reset();
+                });
+            }
+        }
+
+        function showSuccessMessage() {
+            const message = document.createElement('div');
+            message.innerHTML = `
+                <div style="
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: var(--gradient-primary);
+                    color: white;
+                    padding: 2rem;
+                    border-radius: 15px;
+                    text-align: center;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                    z-index: 10000;
+                    max-width: 90%;
+                ">
+                    <i class="fas fa-check-circle" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                    <h3 style="margin-bottom: 1rem;">Mesajınız Alındı!</h3>
+                    <p>En kısa sürede size dönüş yapacağız.</p>
+                    <button onclick="this.parentElement.parentElement.remove()" 
+                            style="margin-top: 1rem; padding: 0.5rem 1rem; background: white; color: var(--primary-blue); border: none; border-radius: 8px; cursor: pointer;">
+                        Tamam
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(message);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (message.parentElement) {
+                    message.remove();
+                }
+            }, 5000);
+        }
+
+        // Utility Functions
+        function throttle(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Scroll to top on page change
+        window.addEventListener('beforeunload', function() {
+            window.scrollTo(0, 0);
+        });
+
+        // Performance optimization
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                // Pause animations when page is hidden
+                document.body.classList.add('page-hidden');
+            } else {
+                // Resume animations when page is visible
+                document.body.classList.remove('page-hidden');
+            }
+        });
+    </script>
+<script defer="True" src="assets/js/main.js"></script></body>
+</html>

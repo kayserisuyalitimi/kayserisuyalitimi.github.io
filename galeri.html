@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projelerimiz | Kayseri Su Yalıtımı Su Yalıtımı</title>
+<meta content="Su yalıtım projelerimizi inceleyin. Çatı, teras, bodrum ve havuz yalıtım çalışmalarımızdan örnekler." name="description"/>
+<link href="assets/css/styles.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        .gallery-hero {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: var(--space-24) 0 var(--space-16);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/image3.jpeg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 1;
+        }
+        .gallery-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        .gallery-hero h1 {
+            font-size: var(--font-size-5xl);
+            font-weight: 800;
+            margin-bottom: var(--space-6);
+        }
+        .gallery-hero p {
+            font-size: var(--font-size-xl);
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .gallery-main {
+            padding: var(--space-24) 0;
+        }
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-4);
+            margin-bottom: var(--space-16);
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: var(--white);
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+            padding: var(--space-3) var(--space-6);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-6);
+        }
+        .gallery-item {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            cursor: pointer;
+            position: relative;
+            opacity: 1;
+            transform: scale(1);
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: var(--shadow-2xl);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: all var(--transition-normal);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
+            opacity: 0;
+            transition: all var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: var(--space-6);
+            color: var(--white);
+        }
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+        .gallery-item-title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            margin-bottom: var(--space-2);
+        }
+        .gallery-item-description {
+            opacity: 0.9;
+            font-size: var(--font-size-sm);
+        }
+        .gallery-item-category {
+            position: absolute;
+            top: var(--space-4);
+            left: var(--space-4);
+            background: var(--gradient-secondary);
+            color: var(--white);
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .gallery-item-zoom {
+            position: absolute;
+            top: var(--space-4);
+            right: var(--space-4);
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: var(--font-size-lg);
+            opacity: 0;
+            transition: all var(--transition-normal);
+        }
+        .gallery-item:hover .gallery-item-zoom {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        /* Lightbox Styles */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-normal);
+        }
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-2xl);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            color: var(--gray-800);
+            border: none;
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-xl);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-normal);
+        }
+        .lightbox-close:hover {
+            transform: scale(1.1);
+            background: var(--primary-light);
+            color: var(--white);
+        }
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: none;
+            border-radius: var(--radius-full);
+            color: var(--white);
+            font-size: var(--font-size-xl);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-normal);
+        }
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+        .lightbox-prev {
+            left: -80px;
+        }
+        .lightbox-next {
+            right: -80px;
+        }
+        .stats-gallery {
+            background: var(--gray-50);
+            padding: var(--space-20) 0;
+            margin-top: var(--space-24);
+        }
+        .stats-gallery .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-8);
+        }
+        .stat-gallery-item {
+            text-align: center;
+            padding: var(--space-8);
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+        }
+        .stat-gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        .stat-gallery-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-xl);
+            margin: 0 auto var(--space-4);
+        }
+        .stat-gallery-number {
+            font-size: var(--font-size-3xl);
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: var(--space-2);
+        }
+        .stat-gallery-label {
+            font-weight: 600;
+            color: var(--gray-600);
+        }
+    </style>
+<link href="images/favicon.png" rel="icon"/><link href="manifest.json" rel="manifest"/><meta content="Galeri | Kayseri Su Yalıtımı Su Yalıtımı" property="og:title"/><meta content="Tamamlanan projelerimizden seçkiler: çatı, teras, bodrum ve havuz yalıtımları." property="og:description"/><meta content="website" property="og:type"/><meta content="images/og-cover.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/></head>
+<body><div class="loading-screen">
+<div class="loading-content">
+<div class="logo-animation">
+<i class="fas fa-tint"></i>
+<span>KAHRAMAN</span>
+</div>
+<div class="loading-bar">
+<div class="loading-progress"></div>
+</div>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+<div class="nav-container">
+<a class="nav-logo" href="index.html">
+<i class="fas fa-tint"></i>
+<span>KAHRAMAN</span>
+</a>
+<div class="nav-menu" id="nav-menu">
+<a class="nav-link" href="index.html">Ana Sayfa</a>
+<a class="nav-link" href="hizmetler.html">Hizmetler</a>
+<a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
+<a class="nav-link active" href="galeri.html">Galeri</a>
+<a class="nav-link" href="iletisim.html">İletişim</a>
+<div class="nav-cta">
+<a class="cta-btn" href="tel:+905051429289">
+<i class="fas fa-phone"></i> Hemen Ara
+                    </a>
+</div>
+</div>
+<div class="hamburger" id="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</nav>
+<!-- Gallery Hero -->
+<section class="gallery-hero">
+<div class="container">
+<h1>Projelerimiz</h1>
+<p>Su yalıtımında gerçekleştirdiğimiz başarılı projeler. Kalite ve güvenin somut örnekleri.</p>
+</div>
+</section>
+<!-- Gallery Main -->
+<section class="gallery-main">
+<div class="container">
+<!-- Gallery Filters -->
+<div class="gallery-filters">
+<button class="filter-btn active" data-filter="all">
+<i class="fas fa-th-large"></i>
+                    Tümü
+                </button>
+<button class="filter-btn" data-filter="cati">
+<i class="fas fa-home"></i>
+                    Çatı Yalıtımı
+                </button>
+<button class="filter-btn" data-filter="teras">
+<i class="fas fa-building"></i>
+                    Teras Yalıtımı
+                </button>
+<button class="filter-btn" data-filter="bodrum">
+<i class="fas fa-layer-group"></i>
+                    Bodrum Yalıtımı
+                </button>
+<button class="filter-btn" data-filter="havuz">
+<i class="fas fa-swimming-pool"></i>
+                    Havuz Yalıtımı
+                </button>
+</div>
+<!-- Gallery Grid -->
+<div class="gallery-grid">
+<!-- Çatı Yalıtım Projeleri -->
+<div class="gallery-item" data-category="cati">
+<img alt="Villa Çatı Yalıtımı - Beykoz" src="images/image1.jpeg"/>
+<div class="gallery-item-category">Çatı Yalıtımı</div>
+<div class="gallery-item-zoom">
+<i class="fas fa-search-plus"></i>
+</div>
+<div class="gallery-item-overlay">
+<div class="gallery-item-title">Villa Çatı Yalıtımı</div>
+<div class="gallery-item-description">Beykoz'da 350m² villa çatısında bitüm membran uygulaması. UV dayanıklı kaplama ile 15 yıl garanti.</div>
+</div>
+</div>
+<div class="gallery-item" data-category="cati">
+<img alt="Apartman Çatı Yalıtımı - Şişli" src="images/image2.jpeg"/>
+<div class="gallery-item-category">Çatı Yalıtımı</div>
+<div class="gallery-item-zoom">
+<i class="fas fa-search-plus"></i>
+</div>
+<div class="gallery-item-overlay">
+<div class="gallery-item-title">Apartman Çatı Yalıtımı</div>
+<div class="gallery-item-description">Şişli'de 8 katlı apartman çatısında kristalize sistem uygulaması. Detaylı su testi ile teslim.</div>
+</div>
+</div>
+<!-- Teras Yalıtım Projeleri -->
+<div class="gallery-item" data-category="teras">
+<img alt="Teras Bahçe Yalıtımı - Kadıköy" src="images/image3.jpeg"/>
+<div class="gallery-item-category">Teras Yalıtımı</div>
+<div class="gallery-item-zoom">
+<i class="fas fa-search-plus"></i>
+</div>
+<div class="gallery-item-overlay">
+<div class="gallery-item-title">Teras Bahçe Yalıtımı</div>
+<div class="gallery-item-description">Kadıköy'de lüks rezidans teras bahçesinde PVC membran ve drenaj sistemi kurulumu.</div>
+</div>
+</div>
+<div class="gallery-item" data-category="teras">
+<img alt="Ofis Binası Teras Yalıtımı - Levent" src="images/image4.jpeg"/>
+<div class="gallery-item-category">Teras Yalıtımı</div>
+<div class="gallery-item-zoom">
+<i class="fas fa-search-plus"></i>
+</div>
+<div class="gallery-item-overlay">
+<div class="gallery-item-title">Ofis Binası Teras Yalıtımı</div>
+<div class="gallery-item-description">Levent'te plaza binasında 1200m² teras alanında poliüretan membran uygulaması.</div>
+</div>
+</div>
+<!-- Bodrum Yalıtım Projeleri -->
+<div class="gallery-item" data-category="bodrum">
+<img alt="Bodrum Perde Yalıtımı - Sarıyer" src="images/image5.jpeg"/>
+<div class="gallery-item-category">Bodrum Yalıtımı</div>
+<div class="gallery-item-zoom">
+<i class="fas fa-search-plus"></i>
+</div>
+<div class="gallery-item-overlay">
+<div class="gallery-item-title">Bodrum Perde Yalıtımı</div>
+<div class="gallery-item-description">Sarıyer'de müstakil evde bodrum perde duvarlarında XPS levha ve membran uygulaması.</div>
+</div>
+</div>
+<div class="gallery-item" data-category="bodrum">
+<img alt="AVM Bodrum Yalıtımı - Bahçeşehir" src="images/image1.jpeg"/>
+<div class="gallery-item-category">Bodrum Yalıtımı</div>
+<div class="gallery-item-zoom">
+<i class="fas fa-search-plus"></i>
+</div>
+<div class="gallery-item-overlay">
+<div class="gallery-item-title">AVM Bodrum Yalıtımı</div>
+<div class="gallery-item-description">Bahçeşehir AVM'de bodrum katlarında kristalize ve drenaj sistemi uygulaması.</div>
+</div>
+</div>
+<!-- Havuz Yalıtım Projeleri -->
+<div class="gallery-item" data-category="havuz">
+<img alt="Özel Havuz Yalıtımı - Büyükada" src="images/image2.jpeg"/>
+<div class="gallery-item-category">Havuz Yalıtımı</div>
+<div class="gallery-item-zoom">
+<i class="fas fa-search-plus"></i>
+</div>
+<div class="gallery-item-overlay">
+<div class="gallery-item-title">Özel Havuz Yalıtımı</div>
+<div class="gallery-item-description">Büyükada'da özel villa havuzunda TSE onaylı sürme izolasyon malzemesi uygulaması.</div>
+</div>
+</div>
+<div class="gallery-item" data-category="havuz">
+<img alt="Otel Havuz Yalıtımı - Beşiktaş" src="images/image3.jpeg"/>
+<div class="gallery-item-category">Havuz Yalıtımı</div>
+<div class="gallery-item-zoom">
+<i class="fas fa-search-plus"></i>
+</div>
+<div class="gallery-item-overlay">
+<div class="gallery-item-title">Otel Havuz Yalıtımı</div>
+<div class="gallery-item-description">Beşiktaş'ta 5 yıldızlı otelde çatı katı havuzunda kimyasal dayanıklı membran uygulaması.</div>
+</div>
+</div>
+<!-- Daha fazla proje -->
+<div class="gallery-item" data-category="cati">
+<img alt="Fabrika Çatı Yalıtımı - Çerkezköy" src="images/image4.jpeg"/>
+<div class="gallery-item-category">Çatı Yalıtımı</div>
+<div class="gallery-item-zoom">
+<i class="fas fa-search-plus"></i>
+</div>
+<div class="gallery-item-overlay">
+<div class="gallery-item-title">Fabrika Çatı Yalıtımı</div>
+<div class="gallery-item-description">Çerkezköy'de tekstil fabrikasında 5000m² alanda endüstriyel çatı yalıtım sistemi.</div>
+</div>
+</div>
+<div class="gallery-item" data-category="teras">
+<img alt="Hastane Teras Yalıtımı - Beyoğlu" src="images/image5.jpeg"/>
+<div class="gallery-item-category">Teras Yalıtımı</div>
+<div class="gallery-item-zoom">
+<i class="fas fa-search-plus"></i>
+</div>
+<div class="gallery-item-overlay">
+<div class="gallery-item-title">Hastane Teras Yalıtımı</div>
+<div class="gallery-item-description">Beyoğlu'nda özel hastanede yoğun bakım üstü teras katında özel membran uygulaması.</div>
+</div>
+</div>
+<div class="gallery-item" data-category="havuz">
+<img alt="Su Deposu Yalıtımı - Pendik" src="images/image1.jpeg"/>
+<div class="gallery-item-category">Havuz Yalıtımı</div>
+<div class="gallery-item-zoom">
+<i class="fas fa-search-plus"></i>
+</div>
+<div class="gallery-item-overlay">
+<div class="gallery-item-title">Su Deposu Yalıtımı</div>
+<div class="gallery-item-description">Pendik'te içme suyu deposunda TSE onaylı ve kimyasal dayanıklı izolasyon uygulaması.</div>
+</div>
+</div>
+<div class="gallery-item" data-category="bodrum">
+<img alt="Metro İnşaatı Yalıtımı - Ümraniye" src="images/image2.jpeg"/>
+<div class="gallery-item-category">Bodrum Yalıtımı</div>
+<div class="gallery-item-zoom">
+<i class="fas fa-search-plus"></i>
+</div>
+<div class="gallery-item-overlay">
+<div class="gallery-item-title">Metro İnşaatı Yalıtımı</div>
+<div class="gallery-item-description">Ümraniye metro istasyonunda yeraltı duvarlarında negatif basınca dayanıklı sistem.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Stats -->
+<section class="stats-gallery">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Projelerimizde <span class="gradient-text">Başarı Rakamları</span></h2>
+</div>
+<div class="stats-grid">
+<div class="stat-gallery-item">
+<div class="stat-gallery-icon">
+<i class="fas fa-project-diagram"></i>
+</div>
+<div class="stat-gallery-number">150+</div>
+<div class="stat-gallery-label">Tamamlanan Proje</div>
+</div>
+<div class="stat-gallery-item">
+<div class="stat-gallery-icon">
+<i class="fas fa-ruler-combined"></i>
+</div>
+<div class="stat-gallery-number">50.000</div>
+<div class="stat-gallery-label">m² Yalıtım Alanı</div>
+</div>
+<div class="stat-gallery-item">
+<div class="stat-gallery-icon">
+<i class="fas fa-star"></i>
+</div>
+<div class="stat-gallery-number">%98</div>
+<div class="stat-gallery-label">Müşteri Memnuniyeti</div>
+</div>
+<div class="stat-gallery-item">
+<div class="stat-gallery-icon">
+<i class="fas fa-award"></i>
+</div>
+<div class="stat-gallery-number">15</div>
+<div class="stat-gallery-label">Yıl Garanti Süresi</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+<div class="lightbox-content">
+<img alt="" id="lightbox-img" src=""/>
+<button class="lightbox-close" id="lightbox-close">
+<i class="fas fa-times"></i>
+</button>
+<button class="lightbox-nav lightbox-prev" id="lightbox-prev">
+<i class="fas fa-chevron-left"></i>
+</button>
+<button class="lightbox-nav lightbox-next" id="lightbox-next">
+<i class="fas fa-chevron-right"></i>
+</button>
+</div>
+</div>
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<div class="footer-logo">
+<i class="fas fa-tint"></i>
+<span>KAHRAMAN SU YALITIMI</span>
+</div>
+<p>Çatı, teras, bodrum, temel ve havuzlarda uzun ömürlü, sertifikalı sistemler. Sızıntılara karşı profesyonel çözüm.</p>
+<div class="social-links">
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+</div>
+</div>
+<div class="footer-section">
+<h3>Hizmetler</h3>
+<ul>
+<li><a href="hizmetler.html#cati-teras">Çatı &amp; Teras Yalıtımı</a></li>
+<li><a href="hizmetler.html#temel-bohcalama">Temel &amp; Bohçalama</a></li>
+<li><a href="hizmetler.html#bodrum-perde">Bodrum &amp; Perde</a></li>
+<li><a href="hizmetler.html#havuz-depo">Havuz &amp; Depo</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>Kurumsal</h3>
+<ul>
+<li><a href="hakkimizda.html">Hakkımızda</a></li>
+<li><a href="galeri.html">Projelerimiz</a></li>
+<li><a href="iletisim.html">İletişim</a></li>
+<li><a href="index.html#sss">Sık Sorulanlar</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>İletişim</h3>
+<div class="contact-info">
+<div class="contact-item">
+<i class="fas fa-phone"></i>
+<span>+90 505 142 92 89</span>
+</div>
+<div class="contact-item">
+<i class="fas fa-envelope"></i>
+<span>info@kahramansuyalitimi.com</span>
+</div>
+<div class="contact-item">
+<i class="fas fa-map-marker-alt"></i>
+<span>Selçuklu, Alagöz Sk. No:10, 38050 Melikgazi/Kayseri</span>
+</div>
+<div class="contact-item">
+<i class="fas fa-clock"></i>
+<span>7/24 Acil Servis</span>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2024 Kayseri Su Yalıtımı Su Yalıtımı. Tüm hakları saklıdır.</p>
+</div>
+</div>
+</footer>
+<script src="assets/js/main.js"></script>
+<script>
+        // Initialize gallery functionality when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initGallery();
+        });
+    </script>
+</body>
+</html>
